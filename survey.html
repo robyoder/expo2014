@@ -1,0 +1,170 @@
+      <h1>Survey</h1>
+<form accept-charset="UTF-8" action="/expo2014/admin/survey" method="post">
+
+        <table>
+          
+          <tr>
+            <td class="label-field">
+              <label for="previous">How many previous Software Expos have you been to?</label>
+            </td>
+            <td class="text-field">
+              <input id="previous" name="previous" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="studying">Are you studying Computer Science/Information Systems as either a major or minor?</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="studying_0" name="studying" type="radio" value="0" />
+        	  No:  <input id="studying_1" name="studying" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="recommend">Would you recommend the Software Expo to others?</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="recommend_0" name="recommend" type="radio" value="0" />
+        	  No:  <input id="recommend_1" name="recommend" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="first">Is this your first year coming to the Software Expo?</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="first_0" name="first" type="radio" value="0" />
+        	  No:  <input id="first_1" name="first" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="attend_presentation">Did you attend the product presentation?</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="attend_presentation_0" name="attend_presentation" type="radio" value="0" />
+        	  No:  <input id="attend_presentation_1" name="attend_presentation" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="understanding">The presentation helped improve your understanding Software Engineers Inc.</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="understanding_0" name="understanding" type="radio" value="0" />
+        	  No:  <input id="understanding_1" name="understanding" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="created">The presentation helped you understand the software created.</label>
+            </td>
+            <td class="text-field">
+              Yes: <input id="created_0" name="created" type="radio" value="0" />
+        	  No:  <input id="created_1" name="created" type="radio" value="1" />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="hear">How did you hear about the Expo?</label>
+            </td>
+            <td class="text-field">
+              <label for="mouth">Word of mouth.</label>
+	          <input id="mouth" name="mouth" type="checkbox" value="1" /><br />
+	          <label for="chapel">Chapel announcement.</label>
+	          <input id="chapel" name="chapel" type="checkbox" value="1" /><br />
+	          <label for="connection">Campus Connection screen.</label>
+	          <input id="connection" name="connection" type="checkbox" value="1" /><br />
+	          <label for="video">Student Body video.</label>
+	          <input id="video" name="video" type="checkbox" value="1" /><br />
+	          <label for="materials">Promotional materials (e.g. stickers/buttons).</label>
+	          <input id="materials" name="materials" type="checkbox" value="1" /><br />
+	          <label for="all">All of the above.</label>
+	          <input id="all" name="all" type="checkbox" value="1" /><br />
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="professional">How professional were the Software Engineers Inc. members?</label>
+            </td>
+            <td class="text-field">
+              <select id="professional" name="professional"><option value="N">None</option>
+<option  value="S">Some</option>
+<option  value="A">Average</option>
+<option  value="G">Good</option>
+<option  value="E">Excellent</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="attractive_adit">How attractive do you find Adit?</label>
+            </td>
+            <td class="text-field">
+              <select id="attractive_adit" name="attractive_adit"><option value="U">Ugly</option>
+<option  value="P">Plain</option>
+<option  value="N">Neutral</option>
+<option  value="A">Attractive</option>
+<option  value="VA">Very Attractive</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="attractive_groupgrant">How attractive do you find groupGrant?</label>
+            </td>
+            <td class="text-field">
+              <select id="attractive_groupgrant" name="attractive_groupgrant"><option value="U">Ugly</option>
+<option  value="P">Plain</option>
+<option  value="N">Neutral</option>
+<option  value="A">Attractive</option>
+<option  value="VA">Very Attractive</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="friendly_adit">How user-friendly is Adit?</label>
+            </td>
+            <td class="text-field">
+              <select id="friendly_adit" name="friendly_adit"><option value="C">Confusing</option>
+<option  value="SC">Somewhat Confusing</option>
+<option  value="N">Neutral</option>
+<option  value="UF">User-Friendly</option>
+<option  value="VUF">Very User-Friendly</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="friendly_groupgrant">How user-friendly is groupGrant?</label>
+            </td>
+            <td class="text-field">
+              <select id="friendly_groupgrant" name="friendly_groupgrant"><option value="C">Confusing</option>
+<option  value="SC">Somewhat Confusing</option>
+<option  value="N">Neutral</option>
+<option  value="UF">User-Friendly</option>
+<option  value="VUF">Very User-Friendly</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="overall">Please indicate your overall satisfaction with the Expo?</label>
+            </td>
+            <td class="text-field">
+              <select id="overall" name="overall"><option value="VD">Very Dissatisfied</option>
+<option  value="SD">Somewhat Dissatisfied</option>
+<option  value="N">Neutral</option>
+<option  value="SS">Somewhat Satisfied</option>
+<option  value="VS">Very Satisfied</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="label-field">
+              <label for="comments">Do you have any comments?</label>
+            </td>
+            <td class="text-field">
+              <textarea id="comments" name="comments">
+</textarea>
+            </td>
+          </tr>
+        </table>
+<input type="submit" value="submit" />
+</form>
