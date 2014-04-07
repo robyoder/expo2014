@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- Carefully created from scratch. :) -->
+<html>
+  <head>
+    <title>Welcome to the Expo!</title>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css" /> -->
+    <style type="text/css">
+      @font-face {
+        font-family: 'BLANCH_CAPS_INLINE';
+        src: url('Blanch/BLANCH_CAPS_INLINE.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BLANCH_CAPS_LIGHT';
+        src: url('Blanch/BLANCH_CAPS_LIGHT.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BLANCH_CAPS';
+        src: url('Blanch/BLANCH_CAPS.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BLANCH_CONDENSED_INLINE';
+        src: url('Blanch/BLANCH_CONDENSED_INLINE.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BLANCH_CONDENSED_LIGHT';
+        src: url('Blanch/BLANCH_CONDENSED_LIGHT.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BLANCH_CONDENSED';
+        src: url('Blanch/BLANCH_CONDENSED.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Maven';
+        src: url('Blanch/MavenProLight-300.otf');
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-sizing: border-box;
+        font-family: "Maven";
+        line-height: 1.3
+      }
+      body {
+        background: #222;
+        font-size: 25px;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: BLANCH_CAPS;
+      }
+      h1 {
+        font-size: 3em;
+      }
+      header.page {
+        padding: 1.2em 0 .6em;
+      }
+      header img, footer img, #middle, .layer {
+        width: 100%;
+        min-width: 16em;
+      }
+      .layer {
+        padding: 3% 0;
+      }
+      @media screen and (min-width: 833px) {
+        .layer {
+          padding: 1em 0;
+        }
+      }
+      .layer.one {
+        background: #3e3e3e;
+      }
+      .layer.two {
+        background: #7c7c7c;
+      }
+      .layer.three {
+        background: #bfbfbf;
+      }
+      .layer.four {
+        background: #f3f3f3;
+        color: #666;
+        padding: 0;
+      }
+      #top * {
+        text-align: center;
+      }
+      .medium {
+        font-size: 1.3em;
+      }
+      .big {
+        font-size: 3.3em;
+        margin: 0;
+        line-height: .9;
+      }
+      .inline {
+        font-family: BLANCH_CAPS_INLINE;
+      }
+      .condensed {
+        font-family: BLANCH_CONDENSED;
+      }
+      .condensed.inline {
+        font-family: BLANCH_CONDENSED_INLINE;
+      }
+      .grey {
+        color: #444;
+      }
+      .lightgrey {
+        color: #888;
+      }
+      .page {
+        max-width: 36em;
+        margin: 0 auto;
+        box-sizing: padding-box;
+      }
+      .main.page {
+        padding: 4% 0;
+      }
+      @media screen and (min-width: 900px) {
+        .main.page {
+          padding: 36px 0;
+        }
+      }
+      .project {
+        float: left;
+        width: 50%;
+        padding: 4% 6%;
+      }
+      @media screen and (min-width: 900px) {
+        .project {
+          padding: 36px 54px;
+        }
+      }
+      .project p {
+        margin-top: .5em;
+      }
+      .project a.button {
+        margin-top: .3em;
+        display: inline-block;
+        padding: .3em .8em .15em;
+        background: #f06022;
+        color: white;
+        text-decoration: none;
+      }
+      .adit.project {
+        border-right: solid 2px #ccc;
+        text-align: right;
+      }
+      .project .logo {
+        padding-bottom: .2em;
+        border-bottom: .2em solid transparent;
+      }
+      .project .logo:hover {
+        border-bottom: .2em solid #888;
+      }
+      .groupgrant.logo {
+        width: 90%;
+      }
+      .adit.logo {
+        width: 80%
+      }
+/*
+      .groupgrant.logo {
+        margin-top: 3%;
+      }
+*/
+      footer {
+        padding: 3% 0;
+      }
+      .survey {
+        margin: 0 6%;
+      }
+      .survey p {
+        text-align: center;
+        padding: 4% 0 0 0;
+        font-size: 1.5em;
+      }
+      .survey p a {
+        color: #f06022;
+      }
+      .clear {
+        clear: both;
+      }
+      @media screen and (max-width: 700px) {
+        .project {
+          font-size: 80%;
+        }
+        .adit.project {
+          border-right: solid 1px #ccc;
+        }
+        .survey p {
+          font-size: 1em;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .project {
+          width: 100%;
+          font-size: 100%;
+        }
+        .groupgrant.logo {
+          width: 60%;
+        }
+        .adit.logo {
+          width: 53%;
+        }
+        .adit.project {
+          border-right: none;
+          text-align: left;
+        }
+        .survey p {
+          font-size: 1.3em;
+        }
+      }
+      
+      #survey {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page">
+      <img src="header-03.svg" />
+    </header>
+    <section id="middle">
+      <div class="layer one">
+        <div class="layer two">
+          <div class="layer three">
+            <div class="layer four">
+              <div class="main page">
+                <div class="adit project">
+                  <a href="/expo2014/adit"><img class="adit logo" src="adit.svg" /></a>
+                  <p>Created exclusively for MK&nbsp;202, PCC's Professional Selling course, Adit eliminates the need for the paperwork that can make selling ads so tedious. From the initial client signup rush to the everyday sales activity updates, things are easier with Adit. While making sales still takes plenty of work, both students and teachers can now focus on the project, not the paperwork.</p>
+                  <a class="button" href="/expo2014/adit">Demo Adit</a>
+                </div>
+                <div class="groupgrant project">
+                  <a href="/expo2014/groupgrant"><img class="groupgrant logo" src="groupgrant_tall.svg" /></a>
+                  <p>Targeting the relationship between charities and businesses, GroupGrant is a new startup that takes a different approach to charity fundraising. Businesses can choose to make products or services available to charities at discounted prices, and charities can launch "groupGrants," which are fundraisers for specific needs or projects.</p>
+                  <a class="button" href="/expo2014/groupgrant">Demo GroupGrant</a>
+                </div>
+                <div class="survey clear"><p>When you're done checking out the apps, make sure to <a href="#survey">take our survey</a> below!</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="survey" class="main page">
+      <form action="./survey" method="post">
+        <input type="text" />
+      </form>
+    </section>
+    <footer class="page">
+      <img src="broughtby.svg" />
+    </footer>
+  </body>
+</html>
