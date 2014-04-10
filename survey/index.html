@@ -1,177 +1,233 @@
-      <h1>Survey</h1>
-<form accept-charset="UTF-8" action="/expo2014/admin/survey" method="post">
+<html style="">
+<style type="text/css">
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #f3f3f3; 
+  color: #333; 
+  font-family: Verdana; 
+  font-weight: 100;
+  font-size: 20px;
+}
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : inherit;
+}
+table.ranges td:first-child {
+  text-align: right;
+}
+table.ranges td {
+  padding: 0 .3em;
+}
+table {
+  font-size: inherit;
+  font-size: .9em;
+  margin: .5em 0 0 0;
+}
+input[type=text] {
+  width: 100%;
+  max-width: 20em;
+}
+input[type=number] {
+  width: 4em;
+}
+input[type=text],
+input[type=number],
+textarea {
+  outline: none;
+  border: 3px solid #ccc;
+  padding: .3em .4em;
+  color: #333; 
+  margin: .25em .05em;
+}
+input[type=range] {
+  width: 100px;
+  height: 10px;
+  margin: 5px 0 0 0;
+}
+input[type=text]:focus,
+input[type=number]:focus,
+textarea:focus {
+  border-color: #f06022;
+}
+textarea {
+  width: 100%;
+  height: 7em;
+}
+.page {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+.label-field {
+  width: 250px;
+  text-align: right;
+}
+button, input[type=submit], input[type=button] {
+  background: #f06022;
+  border: none;
+  outline: none;
+  color: white;
+  padding: .3em .8em;
+  margin-top: .8em;
+}
+p {
+  margin: 1.3em 0 0 0;
+}
+p.dependent {
+  margin-left: 2em;
+}
+h1 {
+  margin-top: 2em;
+  color: #f06022;
+}
+h2 {
+  font-size: 1.2em;
+  border-bottom: .1em dotted #ccc;
+  padding-bottom: .1em;
+  width: 75%;
+  margin-top: 1.5em;
+}
+</style>
 
-        <table>
-          
+<section class="page">
+      <h1>Expo Visitor Survey</h1>
+      <form accept-charset="UTF-8" action="/expo2014/admin/survey" method="post">
+        <h2>You</h2>
+        <p>
+          <label for="name">What's your name?</label><br />
+          <input id="name" name="name" type="text" />
+        </p>
+        <p>
+          <label for="major">Major?</label><br />
+          <input id="major" name="major" type="text" />
+        </p>
+        <p>
+          <label for="previous">How many years have you attended the Software Expo?</label><br />
+          <input id="previous" name="previous" type="number" />
+        </p>
+        <p>
+          Are you a Computer Science student (major or minor)?<br />
+          <input type="radio" name="cs_student" id="cs_student_yes" value="yes" /><label for="cs_student_yes">Yes</label>
+          <input type="radio" name="cs_student" id="cs_student_no" value="no" /><label for="cs_student_no">No</label>
+        </p>
+        <p>
+          How did you hear about the Expo?<br />
+          <input id="mouth" name="hear[ ]" type="checkbox" value="mouth" />
+          <label for="mouth">Word of mouth</label><br />
+          <input id="chapel" name="hear[ ]" type="checkbox" value="chapel" />
+          <label for="chapel">Chapel announcement</label><br />
+          <input id="connection" name="hear[ ]" type="checkbox" value="connection" />
+          <label for="connection">Campus Connection screen</label><br />
+          <input id="facebook" name="hear[ ]" type="checkbox" value="video" />
+          <label for="facebook">Facebook announcement or video</label><br />
+          <input id="twitter" name="hear[ ]" type="checkbox" value="video" />
+          <label for="twitter">Twitter announcement</label><br />
+          <input id="materials" name="hear[ ]" type="checkbox" value="materials" />
+          <label for="materials">Promotional materials (e.g. stickers/buttons)</label><br />
+        </p>
+        <h2>The Projects</h2>
+        <p>How would you describe Adit?</p>
+        <table class="ranges">
           <tr>
-            <td class="label-field">
-              <label for="name">Tell us who you are</label>
-            </td>
-            <td class="text-field">
-              <input id="name" name="name" type="text" />
-            </td>
+            <td>Very confusing</td>
+            <td><input id="friendly_adit" name="friendly_adit" type="range" min="0" max="100" /></td>
+            <td>Very user-friendly</td>
           </tr>
           <tr>
-            <td class="label-field">
-              <label for="previous">How many previous Software Expos have you been to?</label>
-            </td>
-            <td class="text-field">
-              <input id="previous" name="previous" type="text" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="studying">Are you studying Computer Science/Information Systems as either a major or minor?</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="studying_0" name="studying" type="radio" value="0" />
-        	  No:  <input id="studying_1" name="studying" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="recommend">Would you recommend the Software Expo to others?</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="recommend_0" name="recommend" type="radio" value="0" />
-        	  No:  <input id="recommend_1" name="recommend" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="first">Is this your first year coming to the Software Expo?</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="first_0" name="first" type="radio" value="0" />
-        	  No:  <input id="first_1" name="first" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="attend_presentation">Did you attend the product presentation?</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="attend_presentation_0" name="attend_presentation" type="radio" value="0" />
-        	  No:  <input id="attend_presentation_1" name="attend_presentation" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="understanding">The presentation helped improve your understanding Software Engineers Inc.</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="understanding_0" name="understanding" type="radio" value="0" />
-        	  No:  <input id="understanding_1" name="understanding" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="created">The presentation helped you understand the software created.</label>
-            </td>
-            <td class="text-field">
-              Yes: <input id="created_0" name="created" type="radio" value="0" />
-        	  No:  <input id="created_1" name="created" type="radio" value="1" />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="hear">How did you hear about the Expo?</label>
-            </td>
-            <td class="text-field">
-              <label for="mouth">Word of mouth.</label>
-	          <input id="mouth" name="mouth" type="checkbox" value="1" /><br />
-	          <label for="chapel">Chapel announcement.</label>
-	          <input id="chapel" name="chapel" type="checkbox" value="1" /><br />
-	          <label for="connection">Campus Connection screen.</label>
-	          <input id="connection" name="connection" type="checkbox" value="1" /><br />
-	          <label for="video">Student Body video.</label>
-	          <input id="video" name="video" type="checkbox" value="1" /><br />
-	          <label for="materials">Promotional materials (e.g. stickers/buttons).</label>
-	          <input id="materials" name="materials" type="checkbox" value="1" /><br />
-	          <label for="all">All of the above.</label>
-	          <input id="all" name="all" type="checkbox" value="1" /><br />
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="professional">How professional were the Software Engineers Inc. members?</label>
-            </td>
-            <td class="text-field">
-              <select id="professional" name="professional"><option value="N">None</option>
-<option  value="S">Some</option>
-<option  value="A">Average</option>
-<option  value="G">Good</option>
-<option  value="E">Excellent</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="attractive_adit">How attractive do you find Adit?</label>
-            </td>
-            <td class="text-field">
-              <select id="attractive_adit" name="attractive_adit"><option value="U">Ugly</option>
-<option  value="P">Plain</option>
-<option  value="N">Neutral</option>
-<option  value="A">Attractive</option>
-<option  value="VA">Very Attractive</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="attractive_groupgrant">How attractive do you find groupGrant?</label>
-            </td>
-            <td class="text-field">
-              <select id="attractive_groupgrant" name="attractive_groupgrant"><option value="U">Ugly</option>
-<option  value="P">Plain</option>
-<option  value="N">Neutral</option>
-<option  value="A">Attractive</option>
-<option  value="VA">Very Attractive</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="friendly_adit">How user-friendly is Adit?</label>
-            </td>
-            <td class="text-field">
-              <select id="friendly_adit" name="friendly_adit"><option value="C">Confusing</option>
-<option  value="SC">Somewhat Confusing</option>
-<option  value="N">Neutral</option>
-<option  value="UF">User-Friendly</option>
-<option  value="VUF">Very User-Friendly</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="friendly_groupgrant">How user-friendly is groupGrant?</label>
-            </td>
-            <td class="text-field">
-              <select id="friendly_groupgrant" name="friendly_groupgrant"><option value="C">Confusing</option>
-<option  value="SC">Somewhat Confusing</option>
-<option  value="N">Neutral</option>
-<option  value="UF">User-Friendly</option>
-<option  value="VUF">Very User-Friendly</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="overall">Please indicate your overall satisfaction with the Expo?</label>
-            </td>
-            <td class="text-field">
-              <select id="overall" name="overall"><option value="VD">Very Dissatisfied</option>
-<option  value="SD">Somewhat Dissatisfied</option>
-<option  value="N">Neutral</option>
-<option  value="SS">Somewhat Satisfied</option>
-<option  value="VS">Very Satisfied</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="label-field">
-              <label for="comments">Do you have any comments?</label>
-            </td>
-            <td class="text-field">
-              <textarea id="comments" name="comments"></textarea>
-            </td>
+            <td>Looks ugly</td>
+            <td><input id="attractive_adit" name="attractive_adit" type="range" min="0" max="100" /></td>
+            <td>Looks great!</td>
           </tr>
         </table>
-<input type="submit" value="submit" />
-</form>
+        <p>How would you describe GroupGrant?</p>
+        <table class="ranges">
+          <tr>
+            <td>Very confusing</td>
+            <td><input id="friendly_groupgrant" name="friendly_groupgrant" type="range" min="0" max="100" /></td>
+            <td>Very user-friendly</td>
+          </tr>
+          <tr>
+            <td>Looks ugly</td>
+            <td><input id="attractive_groupgrant" name="attractive_groupgrant" type="range" min="0" max="100" /></td>
+            <td>Looks great!</td>
+          </tr>
+        </table>
+        <h2>The Expo</h2>
+        <p>
+          Did you attend the presentation about the projects?<br />
+          <input type="radio" name="attend_pres" id="attend_pres_yes" value="yes" /><label for="attend_pres_yes">Yes</label>
+          <input type="radio" name="attend_pres" id="attend_pres_no" value="no" /><label for="attend_pres_no">No</label>
+        </p>
+        <p class="dependent">
+          Did the presentation help improve your understanding of Software Engineers Inc.?<br />
+          <input type="radio" name="sei_un" id="sei_un_yes" value="yes" /><label for="sei_un_yes">Yes</label>
+          <input type="radio" name="sei_un" id="sei_un_no" value="no" /><label for="sei_un_no">No</label>
+          <input type="radio" name="sei_un" id="sei_un_na" value="na" /><label for="sei_un_na">N/A</label>
+        </p>
+        <p class="dependent">
+          Did the presentation help improve your understanding of the software we created?<br />
+          <input type="radio" name="proj_un" id="proj_un_yes" value="yes" /><label for="proj_un_yes">Yes</label>
+          <input type="radio" name="proj_un" id="proj_un_no" value="no" /><label for="proj_un_no">No</label>
+          <input type="radio" name="proj_un" id="proj_un_na" value="na" /><label for="proj_un_na">N/A</label>
+        </p>
+        <p>How would you describe the SEI team members?</p>
+        <table class="ranges">
+          <tr>
+            <td>Unprofessional</td>
+            <td><input id="professional" name="professional" type="range" min="0" max="100" /></td>
+            <td>Very professional</td>
+          </tr>
+          <tr>
+            <td>Unfriendly</td>
+            <td><input id="friendly" name="friendly" type="range" min="0" max="100" /></td>
+            <td>Very friendly</td>
+          </tr>
+          <tr>
+            <td>Unhelpful</td>
+            <td><input id="helpful" name="helpful" type="range" min="0" max="100" /></td>
+            <td>Very helpful</td>
+          </tr>
+        </table>
+        <p>How would you describe the Software Expo as a whole?</p>
+        <table class="ranges">
+          <tr>
+            <td>Uninteresting</td>
+            <td><input id="interesting" name="interesting" type="range" min="0" max="100" /></td>
+            <td>Very interesting</td>
+          </tr>
+          <tr>
+            <td>Poorly organized</td>
+            <td><input id="organized" name="organized" type="range" min="0" max="100" /></td>
+            <td>Well organized</td>
+          </tr>
+          <tr>
+            <td>A bad experience</td>
+            <td><input id="overall_experience" name="overall_experience" type="range" min="0" max="100" /></td>
+            <td>A great experience</td>
+          </tr>
+        </table>
+        <p>
+          Would you recommend the Software Expo to others?<br />
+          <input type="radio" name="recommend" id="recommend_yes" value="yes" /><label for="recommend_yes">Yes</label>
+          <input type="radio" name="recommend" id="recommend_no" value="no" /><label for="recommend_no">No</label>
+        </p>
+        <p>
+          <label for="comments">Do you have any other comments for us?</label><br />
+          <textarea id="comments" name="comments"></textarea>
+        </p>
+        <input type="submit" value="Submit" />
+      </form>
+
+<script type="text/javascript">
+
+// var select_tags = document.getElementsByTagName("select");
+// for (var x = 0; x < select_tags.length; x++)
+// {
+//   select_tags[x].selectedIndex = -1;
+// }
+
+</script>
+</section>
